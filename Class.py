@@ -1,13 +1,17 @@
 import datetime
+
+
 class User:
-    def __init__ (self, login):
+    def __init__ (self, login, password):
         self.login = str(login)
+        self.password = str(password)
         self.queuefilm = []
 
-    def addfilm(self, film, position = -1):
+    def addfilm(self, film, position=-1):
         if film not in self.queuefilm:
             position -= 1
-            if (position == -1) or (position >= len(self.queuefilm)): position = len(self.queuefilm) + 1
+            if (position == -1) or (position >= len(self.queuefilm)):
+                position = len(self.queuefilm) + 1
             film.timetoqueue = datetime.datetime.now()
             self.queuefilm = self.queuefilm[:position] + [film] + self.queuefilm[position  : ]
 
@@ -18,7 +22,7 @@ class User:
 
     def delfilmbyname(self, film):
         position = self.queuefilm.index(film)
-        self.queuefilm = self.queuefilm[ : position] + self.queuefilm[position + 1: ]
+        self.queuefilm = self.queuefilm[:position] + self.queuefilm[position + 1: ]
 
     def delfilm(self):
         self.queuefilm = self.queuefilm[1 : ]
@@ -29,16 +33,27 @@ class User:
         self.queuefilm = self.queuefilm[ : nextpos - 1] + [film] + self.queuefilm[nextpos - 1 : ]
 
     def sortof(self, param): #reiting and age, timetoqueue?
-        try:
-            for count in range(len(self.queuefilm) - 1):
-                for counter in range(len(self.queuefilm) - 1):
+        flag = True
+        if param == 'age':
+            flag = False
+            for count in range(len(self.queuefilm)):
+                for counter in range(len(self.queuefilm) ):
                     if self.queuefilm[count].age < self.queuefilm[counter].age:
                         e = self.queuefilm[count]
                         self.queuefilm[count] = self.queuefilm[counter]
                         self.queuefilm[counter] = e
 
-        except:
-            return ('Не удалось отсортировать список фильмов по данному параметру')
+        if param == 'reit':
+            flag = False
+            for count in range(len(self.queuefilm) - 1):
+                for counter in range(len(self.queuefilm) - 1):
+                    if self.queuefilm[count].reit > self.queuefilm[counter].reit:
+                        e = self.queuefilm[count]
+                        self.queuefilm[count] = self.queuefilm[counter]
+                        self.queuefilm[counter] = e
+
+        if flag : return ('Не удалось отсортировать список фильмов по данному параметру')
+        else: return self.queuefilm
 
     def printfilmwithparam(self, param, value):
         flag = True
@@ -57,7 +72,8 @@ class User:
                     flag = False
 
             if (param == 'actors'):
-                if (value in film.actors):
+                s = str(film.actors)
+                if (value in film.actors) or (value in s):
                     #film.printfilm()
                     lis.append(film)
                     flag = False
@@ -74,7 +90,8 @@ class User:
                     lis.append(film)
                     flag = False
 
-        if flag: return('Не удалось найти фильмы удовлетворяющие критерию')
+        if flag:
+            return('Не удалось найти фильмы удовлетворяющие критерию')
         else: return lis
 
 
@@ -94,8 +111,6 @@ class Film:
              Главные актеры снявшиеся в фильме: {4}.
                 '''.format(self.name, self.age, self.genre, self.reit, self.actors))
 
-if __name__ == '__main__':
-    database = []
 
 
 

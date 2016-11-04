@@ -23,7 +23,6 @@ class FilmTest(unittest.TestCase):
                            'actors': ['Иен Маккелен', 'Орландо Блум', 'Питер Джексон'], 'reit': 8.612,
                            'genre': ['Фэнтези', 'Драма', 'Приключение']})
 
-
     def test_init(self):
         self.assertEqual((self.film1.name, self.film1.age, self.film1.actors,
                           self.film1.reit, self.film1.genre),
@@ -55,13 +54,6 @@ class FilmTest(unittest.TestCase):
                           ['Иен Маккелен', 'Орландо Блум', 'Питер Джексон'], 8.612,
                           ['Фэнтези', 'Драма', 'Приключение']), "Bad")
 
-    #def test_printfilm(self):
-        #self.assertEqual(self.film1.printfilm(), '''Фильм Властелин колец: Братство Кольца,
-            #2001 года. Жанр фильма - ['Фэнтези', 'Приключение'].
-            #Рейтинг на кинопоиске - 8.565.
-            #Главные актеры снявшиеся в фильме: ['Иен Маккелен', 'Орландо Блум', 'Питер Джексон'].
-            #''')
-
 film1 = Film({'name' : 'Властелин колец: Братство Кольца', 'age' : '2001',
                            'actors' : ['Иен Маккелен', 'Орландо Блум', 'Питер Джексон'], 'reit' : '8.565',
                           'genre' : ['Фэнтези', 'Приключение']})
@@ -80,12 +72,12 @@ film5 = Film({'name': 'Властелин колец: Возвращение К�
 
 class UserTest(unittest.TestCase):
     def setUp(self):
-        self.user1 = User('Abramov')
-        self.user2 = User('Borisov')
+        self.user1 = User('Abramov', '12345')
+        self.user2 = User('Borisov', 'qwert')
 
     def test_init(self):
-        self.assertEqual((self.user1.login, self.user1.queuefilm), ('Abramov', []))
-        self.assertEqual((self.user2.login, self.user1.queuefilm), ('Borisov', []))
+        self.assertEqual((self.user1.login, self.user1.password, self.user1.queuefilm), ('Abramov', '12345', []))
+        self.assertEqual((self.user2.login, self.user2.password, self.user1.queuefilm), ('Borisov', 'qwert', []))
 
     def test_addfilm(self):
         self.user1.addfilm(film1)
@@ -135,16 +127,19 @@ class UserTest(unittest.TestCase):
         self.user1.changefilmposition(film1, 3)
         self.assertEqual(self.user1.queuefilm, [film4, film3, film1, film2])
 
-    #def test_sortof(self):
+    def test_sortof(self):
         self.user1.addfilm(film1)
         self.user1.addfilm(film2, 1)
-        #self.user1.addfilm(film3, 3)
-        #self.user1.addfilm(film4, 10)
-        #self.user1.addfilm(film5, 2)
+        self.assertEqual(self.user1.sortof('age'), [film2, film1])
+        self.user1.addfilm(film3, 3)
+        self.assertEqual(self.user1.sortof('reit'), [film2, film1, film3])
+        self.user1.addfilm(film4, 10)
+        self.user1.addfilm(film5, 2)
         #film2, film5, film1, film3, film4
-        #self.user1.sortof('age')
-        #self.assertEqual(self.user1.queuefilm, [film3, film4, film5, film1, film2])
-        #self.assertEqual(self.user1.queuefilm, [film4, film2])
+        self.user1.sortof('age')
+        self.assertEqual(self.user1.sortof('age'), [film2, film1, film5, film4, film3])
+        self.assertEqual(self.user1.sortof('name'), 'Не удалось отсортировать список фильмов по данному параметру')
+        self.assertEqual(self.user1.sortof('reit'), [film4, film2, film5, film1, film3])
 
     def test_printfilmwithparam(self):
         self.user1.addfilm(film1)
@@ -152,10 +147,10 @@ class UserTest(unittest.TestCase):
         self.user1.addfilm(film3, 3)
         self.user1.addfilm(film4, 10)
         self.user1.addfilm(film5, 2)
-        #film2, film5, film1, film3, film4
+        film2, film5, film1, film3, film4
         self.assertEqual(self.user1.printfilmwithparam('name', 'Властелин'), [ film5, film1])
         self.assertEqual(self.user1.printfilmwithparam('actors', 'Иен Маккелен'), [film5, film1, film3])
-        #self.assertEqual(self.user1.printfilmwithparam('actors', 'Мартин'), [film3, film4])
+        self.assertEqual(self.user1.printfilmwithparam('actors', 'Иен'), [film5, film1, film3])
         self.assertEqual(self.user1.printfilmwithparam('age', 2002), [film5, film3, film4])
         self.assertEqual(self.user1.printfilmwithparam('actors', 'Виктор'), 'Не удалось найти фильмы удовлетворяющие критерию')
 
