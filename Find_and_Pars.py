@@ -5,11 +5,26 @@ def get_html(url):
     response = requests.get(url)
     return response.text.encode('cp1251')
 
-def parse(html):
+def parse_film(html):
     soup = BeautifulSoup(html, 'lxml')
     information = soup.find('div', {'class' : 'block film'})
     name = soup.find('p', {'class' : 'title'})
     return str(information), str(name)
+
+def parse_find(html):
+    soup = BeautifulSoup(html, 'lxml')
+    information = soup.find('div', {'id' : 'content'})
+    return str(information)
+
+def get_list_film(inf):
+    inf = inf.split('<span>')
+    film_and_link = {}
+    for i in range(1,7):
+        link = inf[i][9:inf[i].index('>') - 1]
+        name = inf[i][inf[i].index('>') + 1 : inf[i].index(',') + 6]
+        film_and_link[name] = link
+
+    return(film_and_link)
 
 def get_name(name):
     namebegin = name.index('<b>') + 3
@@ -35,7 +50,7 @@ def get_actors(inform):
 
 def get_reit(inform):
     ind = inform.index('i')
-    return inf[3][ind + 2: ind + 6]
+    return inform[ind + 2: ind + 6]
 
 def get_genre(inform):
     inform = inform[:len(inform) - 8]
@@ -50,8 +65,10 @@ def createdict(inf, name):
 
     print(film1)
 
-
 if __name__ == '__main__':
-    for i in range(320, 500):
-        inf, name = parse(get_html('https://m.kinopoisk.ru/movie/%s/' % str(i)))
-        createdict(inf, name)
+    name = input('film - ')
+    film = get_list_film(parse_find(get_html('https://m.kinopoisk.ru?search=%s' % name)))
+    print(film.keys())
+    real_name = input('Выберите из найденного списка нужный вам фильм')
+    inf, name = parse_film(get_html(film[real_name]))
+    createdict(inf, name)
