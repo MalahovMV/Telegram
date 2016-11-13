@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from db_materials import addFilm, createTable, print_user_s_films,create_connect,queryCurs
+from db_materials import addFilm, print_user_s_films,create_connect,queryCurs
 
 def get_html(url):
     response = requests.get(url)
@@ -80,8 +80,13 @@ if __name__ == '__main__':
         print('Нет фильмов с таким или похожим названием')
 
     else:
-        print(film.keys())
-        real_name = input('Выберите из найденного списка нужный вам фильм')
-        inf, name = parse_film(get_html(film[real_name]))
+        #print(sorted(film.keys()))
+        i = 1
+        for key in sorted(film.keys()):
+            print(str(i), key)
+            i += 1
+
+        real_name = input('Выберите из найденного списка нужный вам фильм по номеру ')
+        inf, name = parse_film(get_html(film[sorted(film.keys())[int(real_name) - 1]]))
         createdict(inf, name)
         print_user_s_films()
