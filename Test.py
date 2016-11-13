@@ -1,6 +1,7 @@
 from Class import Film, User
 import unittest
 
+
 class FilmTest(unittest.TestCase):
     def setUp(self):
         self.film1 = Film({'name' : 'Властелин колец: Братство Кольца', 'age' : '2001',
