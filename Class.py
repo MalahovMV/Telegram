@@ -1,6 +1,5 @@
 import datetime
 
-
 class User:
     def __init__ (self, login, password):
         self.login = str(login)
