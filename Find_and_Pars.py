@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from db_materials import addFilm, createTable, print_user_s_films,create_connect,queryCurs
 
 def get_html(url):
     response = requests.get(url)
@@ -19,10 +20,16 @@ def parse_find(html):
 def get_list_film(inf):
     inf = inf.split('<span>')
     film_and_link = {}
-    for i in range(1,7):
-        link = inf[i][9:inf[i].index('>') - 1]
-        name = inf[i][inf[i].index('>') + 1 : inf[i].index(',') + 6]
-        film_and_link[name] = link
+    i = 1
+    while i > 0:
+        try:
+            link = inf[i][9:inf[i].index('>') - 1]
+            name = inf[i][inf[i].index('>') + 1 : inf[i].index(',') + 6]
+            film_and_link[name] = link
+            i += 1
+
+        except:
+            i = 0
 
     return(film_and_link)
 
@@ -62,13 +69,19 @@ def createdict(inf, name):
                   'actors': get_actors(inf[2]), 'reit': get_reit(inf[3]),
                   'genre': get_genre(inf[1])}
 
-
-    print(film1)
+    addFilm(str(film1['name']),str(film1['age']),str(film1['actors']),str(film1['reit']),str(film1['genre']))
+    create_connect()
 
 if __name__ == '__main__':
     name = input('film - ')
+    create_connect()
     film = get_list_film(parse_find(get_html('https://m.kinopoisk.ru?search=%s' % name)))
-    print(film.keys())
-    real_name = input('Выберите из найденного списка нужный вам фильм')
-    inf, name = parse_film(get_html(film[real_name]))
-    createdict(inf, name)
+    if len(film) == 0:
+        print('Нет фильмов с таким или похожим названием')
+
+    else:
+        print(film.keys())
+        real_name = input('Выберите из найденного списка нужный вам фильм')
+        inf, name = parse_film(get_html(film[real_name]))
+        createdict(inf, name)
+        print_user_s_films()
