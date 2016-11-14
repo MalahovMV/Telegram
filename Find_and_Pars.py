@@ -38,10 +38,11 @@ def get_name(name):
     nameend = name.index('</b>')
     return name[namebegin:nameend]
 
-def get_age(inform):
-    ind = inform.index(')')
-    inform = inform[ind:].split(' ')
-    return inform[3][:4]
+def get_age(name):
+    agebegin = name.index('<span>')
+    ageend = name.index('</span>')
+    age = name[agebegin : ageend].split(', ')
+    return age[-2][-4:]
 
 def get_actors(inform):
     actors = []
@@ -65,7 +66,7 @@ def get_genre(inform):
 
 def createdict(inf, name):
     inf = inf.split('<span>')
-    film1 = {'name': get_name(name), 'age': get_age(inf[2]),
+    film1 = {'name': get_name(name), 'age': get_age(name),
                   'actors': get_actors(inf[2]), 'reit': get_reit(inf[3]),
                   'genre': get_genre(inf[1])}
 
