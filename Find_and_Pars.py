@@ -1,6 +1,8 @@
 import requests
+import copy
 from bs4 import BeautifulSoup
-from db_materials import addFilm, print_user_s_films,create_connect,queryCurs
+from peewee import*
+from ptwee_db_orm import add_film,print_films,is_checked,len_db,del_film
 
 def get_html(url):
     response = requests.get(url)
@@ -42,7 +44,11 @@ def get_age(name):
     agebegin = name.index('<span>')
     ageend = name.index('</span>')
     age = name[agebegin : ageend].split(', ')
-    return age[-2][-4:]
+    try:
+        return age[-2][-4:]
+
+    except:
+        return age[0][-4:]
 
 def get_actors(inform):
     actors = []
@@ -70,18 +76,21 @@ def createdict(inf, name):
                   'actors': get_actors(inf[2]), 'reit': get_reit(inf[3]),
                   'genre': get_genre(inf[1])}
 
-    addFilm(str(film1['name']),str(film1['age']),str(film1['actors']),str(film1['reit']),str(film1['genre']))
-    create_connect()
+    if is_checked():  # кажется, что в обоих случаях одинаково работает прост add, но внутри is_checked  еще делает действие,
+        #  а последний шаг одинаковый
+        add_film(str(film1['name']), len_db(), str(film1['age']), str(film1['actors']), str(film1['reit']),
+                 str(film1['genre']))
+    else:
+        add_film(str(film1['name']), len_db(), str(film1['age']), str(film1['actors']), str(film1['reit']),
+                 str(film1['genre']))
 
-if __name__ == '__main__':
+def main_pars():
     name = input('film - ')
-    create_connect()
     film = get_list_film(parse_find(get_html('https://m.kinopoisk.ru?search=%s' % name)))
     if len(film) == 0:
         print('Нет фильмов с таким или похожим названием')
 
     else:
-        #print(sorted(film.keys()))
         i = 1
         for key in sorted(film.keys()):
             print(str(i), key)
@@ -90,4 +99,7 @@ if __name__ == '__main__':
         real_name = input('Выберите из найденного списка нужный вам фильм по номеру ')
         inf, name = parse_film(get_html(film[sorted(film.keys())[int(real_name) - 1]]))
         createdict(inf, name)
-        print_user_s_films()
+        print_films()
+
+if __name__ == '__main__':
+    main_pars()
