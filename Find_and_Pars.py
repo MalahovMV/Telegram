@@ -1,8 +1,6 @@
 import requests
-import copy
 from bs4 import BeautifulSoup
-from peewee import*
-from ptwee_db_orm import add_film,print_films,is_checked,len_db,del_film
+from ptwee_db_orm import add_film,print_films,is_checked,len_db
 
 def get_html(url):
     response = requests.get(url)
@@ -70,36 +68,42 @@ def get_genre(inform):
     inform = inform[:len(inform) - 8]
     return inform.split(', ')
 
-def createdict(inf, name):
+def createdict(inf, name, flag = True):
     inf = inf.split('<span>')
     film1 = {'name': get_name(name), 'age': get_age(name),
                   'actors': get_actors(inf[2]), 'reit': get_reit(inf[3]),
                   'genre': get_genre(inf[1])}
 
-    if is_checked():  # кажется, что в обоих случаях одинаково работает прост add, но внутри is_checked  еще делает действие,
-        #  а последний шаг одинаковый
-        add_film(str(film1['name']), len_db(), str(film1['age']), str(film1['actors']), str(film1['reit']),
+    if flag:
+        if is_checked():
+            add_film(str(film1['name']), len_db(), str(film1['age']), str(film1['actors']), str(film1['reit']),
                  str(film1['genre']))
-    else:
-        add_film(str(film1['name']), len_db(), str(film1['age']), str(film1['actors']), str(film1['reit']),
+        else:
+            add_film(str(film1['name']), len_db(), str(film1['age']), str(film1['actors']), str(film1['reit']),
                  str(film1['genre']))
 
-def main_pars():
-    name = input('film - ')
+    else:
+        return film1
+
+def main_pars(name):
+    #name = input('film - ')
     film = get_list_film(parse_find(get_html('https://m.kinopoisk.ru?search=%s' % name)))
     if len(film) == 0:
-        print('Нет фильмов с таким или похожим названием')
+        return ('Нет фильмов с таким или похожим названием')
 
     else:
         i = 1
+        lis_film = []
         for key in sorted(film.keys()):
-            print(str(i), key)
+            lis_film.append(str(str(i) + str(key)))
             i += 1
 
-        real_name = input('Выберите из найденного списка нужный вам фильм по номеру ')
-        inf, name = parse_film(get_html(film[sorted(film.keys())[int(real_name) - 1]]))
-        createdict(inf, name)
-        print_films()
+        return tuple(lis_film)
+
+def info_film(number_film, film):
+        inf, name = parse_film(get_html(film[sorted(film.keys())[int(number_film) - 1]]))
+        return createdict(inf, name, False)
 
 if __name__ == '__main__':
-    main_pars()
+    name = input()
+    print(main_pars(name))

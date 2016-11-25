@@ -25,8 +25,12 @@ def del_film(name):
             film.delete_instance()
 
 def print_films():
+    film_name = ''
     for film in Film.select():
         print('%s %s %s %s %s %s ' % (film.name_film, film.film_id, film.year_release, film.actors, film.reit, film.genre))
+        film_name += film.name_film
+
+    return film_name
 
 def is_checked():
     db.connect()
@@ -42,5 +46,7 @@ def len_db():
 
 if __name__ == "__main__":
     is_checked()
+    print_films()
+
 
 

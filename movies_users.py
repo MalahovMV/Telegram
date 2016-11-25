@@ -51,15 +51,16 @@ def print_user():
 
 
 MovieUser = Movie.users.get_through_model()
+def createModel():
+    if Movie.table_exists():
+        print("уже существую")
+    else:
+        db.create_tables([
+            User,
+            Movie,
+            MovieUser])
 
-if Movie.table_exists():
-    print("уже существую")
-else:
-    db.create_tables([
-        User,
-        Movie,
-        MovieUser])
-
+createModel()
 add_movie(name_film='awd')
 add_movie(name_film='awd1')
 add_movie(name_film='awd2')
@@ -68,22 +69,46 @@ add_user_per_ind(100)
 add_user_per_ind(99)
 add_user_per_ind(98)
 add_user_per_ind(97)
-huey = Movie.get(Movie.name == 'awd')
-
-print_user()
-awd = Movie.get(Movie.name == 'awd')
-us5 = User.get(User.user_id == 100)
-us4 = User.get(User.user_id == 99)
-us3 = User.get(User.user_id == 98)
-us2 = User.get(User.user_id == 97)
-if(us5,us4,us3,us2 in huey.users):
-    print("такие ребята уже есть")
-else:
-    huey.users.add([us5,us4,us3,us2])
-
-print([User.user_id for User in huey.users])
 
 
+def add_id_to_us(id_user,movie_name):
+    query_film = Movie.select().where(Movie.name == movie_name)
+    if query_film.exists():
+        film = Movie.get(Movie.name == movie_name)
+        query_us = User.select().where(User.user_id == id_user)
+        if query_us.exists():
+            user = User.get(User.user_id == id_user)
+            if (user in film.users):
+                print("Произведена попытка добавить юзера, имеющегося в списке юзеров для данного фильма")
+            else:
+                film.users.add(user)
+        else:
+            print("Такого юзера в базе нет, добавь его сначала в базу")
+    else:
+        print("произведена попытка добавления юзера по несущ фильму")
+
+add_id_to_us(99,'awd')
+add_id_to_us(99,'awd1')
+add_id_to_us(99,'awd5')
+add_id_to_us(100,'awd3')
+add_id_to_us(98,'awd2')
+add_id_to_us(97,'awd1')
+add_id_to_us(898,'awd1')
+
+
+
+def print_id_users_by_film(movie_name):
+    film = Movie.get(Movie.name == movie_name)
+    print(film.name,'используется у: ')
+    print([User.user_id for User in film.users])
+
+def view_connect_film_users():
+    for movie in Movie.select():
+        print_id_users_by_film(movie.name)
+        print('\n')
+
+#print_id_users_by_film('awd')
+view_connect_film_users()
 
 
 
