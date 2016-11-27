@@ -34,29 +34,29 @@ def help_bot(message):
 
 @bot.message_handler(commands=['find_film_'])
 def find_film(message):
-    try:
+    #try:
+    if True:
         #bot.send_message(message.chat.id, message.text.split('_')[2])
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film_lis = Find_and_Parse.parse_film(html)
         for fil in film_lis:
             bot.send_message(message.chat.id, str(fil.keys())[12:-3])
 
-    except:
-        bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+    #except:
+        #bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
 
 @bot.message_handler(commands=['about_film_'])
 def about_film(message):
     try:
-        #film_lis = ptwee_db_orm.print_films()
-        flag = True
-        #text = str(message.text.split('_ ')[-1]).split('. ')
-        #for film in film_lis:
-         #   movie = film.split('.')
-          #  if (text[0] in movie[0]) and (text[1] in movie[2]):
-           #     bot.send_message(message.chat.id, film)
-            #    flag = False
+        film = message.text.split('_')[2]
+        name = film.split(', ')[0][1:]
+        age = film.split(', ')[1][:-1]
+        text = ptwee_db_orm.return_film(name,age)
 
-        if flag:
+        if text:
+            bot.send_message(message.chat.id, text + 'dshsghd')
+
+        else:
             #bot.send_message(message.chat.id, message.text.split('_')[2])
             html = Find_and_Parse.get_html(message.text.split('_')[2])
             film = Find_and_Parse.parse_film(html)
@@ -71,55 +71,61 @@ def about_film(message):
 
 @bot.message_handler(commands=['add_film_'])
 def add_film(message):
-    try:
+    #try:
+    if True:
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film = Find_and_Parse.parse_film(html)
         dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
         bool = ptwee_db_orm.film_in(dict_film['name'], dict_film['age'], str(message.chat.id))
         if not bool:
-            ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.len_db(), str(dict_film['age']), str(dict_film['actors']),
+            ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']), str(dict_film['actors']),
                      str(dict_film['reit']), str(dict_film['genre']), str(message.chat.id))
-
         bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
 
-    except:
-        bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+    #except:
+        #bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
 
 @bot.message_handler(commands=['print_queue_'])
 def print_queue(message):
     try:
-        film_lis = ptwee_db_orm.print_films()
+        film_lis = ptwee_db_orm.print_films(message.chat.id)
         for film in film_lis:
             bot.send_message(message.chat.id, str(film))
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
 
-@bot.message_handler(commands=['print_first.'])
+@bot.message_handler(commands=['print_first_'])
 def print_first(message):
     try:
-        bot.send_message(message.chat.id, 'print')
+        film_lis = ptwee_db_orm.print_films(message.chat.id)
+        bot.send_message(message.chat.id, str(film_lis[0]))
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
 
-@bot.message_handler(commands=['pop_film.'])
+@bot.message_handler(commands=['pop_film_'])
 def pop_film(message):
     try:
-        bot.send_message(message.chat.id, 'pop')
+        name = ptwee_db_orm.pop(message.chat.id)
+        bot.send_message(message.chat.id, 'Удалил фильм - ' + name)
 
     except:
         bot.send_message(message.chat.id, 'Очередь уже пуста, нечего удалять')
 
-@bot.message_handler(commands=['del_film.'])
+@bot.message_handler(commands=['del_film_'])
 def del_film(message):
     try:
-        bot.send_message(message.chat.id, message.text.split('.')[1])
+        film = message.text.split('_')[2]
+        name = film.split('. ')[0][1:]
+        age = film.split('. ')[1]
+        name = ptwee_db_orm.del_film(message.chat.id, name, age)
+        bot.send_message(message.chat.id, "Удалил фильм - " + name)
 
     except:
         bot.send_message(message.chat.id, 'Такого фильма нет в очереди, нечего удалять')
 
-@bot.message_handler(commands=['change_position.'])
+@bot.message_handler(commands=['change_position_'])
 def change_position(message):
     try:
         bot.send_message(message.chat.id, message.text.split('.')[1])
@@ -127,18 +133,28 @@ def change_position(message):
     except:
         bot.send_message(message.chat.id, 'Не могу выполнить данную операцию, позиция/фильм недоступны')
 
-@bot.message_handler(commands=['print_up_age.'])
+@bot.message_handler(commands=['print_up_age_'])
 def print_up_age(message):
     try:
-        bot.send_message(message.chat.id, 'age')
+        film_lis = ptwee_db_orm.return_up_age(message.chat.id, message.text.split('_ ')[1])
+        if not film_lis:
+            bot.send_message(message.chat.id, "Нет фильмов, удовлетворяющих критерию")
+
+        for film in film_lis:
+            bot.send_message(message.chat.id, film)
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
 
-@bot.message_handler(commands=['print_up_reit.'])
+@bot.message_handler(commands=['print_up_reit_'])
 def print_up_reit(message):
     try:
-        bot.send_message(message.chat.id, 'reit')
+        film_lis = ptwee_db_orm.return_up_reit(message.chat.id, message.text.split('_ ')[1])
+        if not film_lis:
+            bot.send_message(message.chat.id, "Нет фильмов, удовлетворяющих критерию")
+
+        for film in film_lis:
+            bot.send_message(message.chat.id, film)
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
