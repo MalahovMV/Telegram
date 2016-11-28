@@ -18,8 +18,8 @@ def parse_film(html):
     for i in range(len(name)):
         film_list.append({(str(name[i].text).replace('\n','')).replace('\xa0',' ').strip() + ', ' + str(inf[i])[50:55]:name[i].get('href')})
 
-    if len(film_list) > 10:
-        return ('Уточните запрос, пожалуйста')
+    if len(film_list) > 6:
+        film_list = film_list[:6]
 
     return film_list
 
@@ -84,6 +84,13 @@ if __name__ == '__main__':
     name = input('film- ' )
     some_f=(parse_film(get_html(name)))
     print(some_f)
+    #for film in some_f:
+        #try:
+            #print(str(film.keys())[12:-3])
+
+        #except:
+            #print(str(film) + 'oooooooooooooooooooooooo')
+
     number = int(input('Nomer- '))
     print(parse_find((str(some_f[number].values())[14:-3])))
     #print(parse_find('http://megogo.net/ru/view/28549-titanik.html'))

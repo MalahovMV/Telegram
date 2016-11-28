@@ -39,8 +39,8 @@ def find_film(message):
         #bot.send_message(message.chat.id, message.text.split('_')[2])
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film_lis = Find_and_Parse.parse_film(html)
-        for fil in film_lis:
-            bot.send_message(message.chat.id, str(fil.keys())[12:-3])
+        for film in film_lis:
+            bot.send_message(message.chat.id, str(film.keys())[12:-3])
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
