@@ -125,6 +125,12 @@ if __name__ == "__main__":
     is_checked()
     #print_films()
     print(find_empty())
+    text = ''
+    for film in Film.select():
+        text += 'Название: ' + film.name_film + "\nГод выхода: " + film.year_release
+        text += "\nРежзисер и актеры: " + film.actors + "\nЖанр: " + film.genre
+        text += "\nРейтинг: " + film.reit + "\n User_id = "+ film.user_id + "\n\n"
 
+    print(text)
 
 

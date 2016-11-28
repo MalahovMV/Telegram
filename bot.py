@@ -18,7 +18,8 @@ def welcome(message):
 
 @bot.message_handler(commands=['help'])
 def help_bot(message):
-    text = '''Можешь со мной общаться посредством команд, обязательно обрати внимание на точку после каждой команды:
+    text = '''Можешь со мной общаться посредством команд, обязательно обрати внимание на нижнее подчеркивание после каждой команды:
+В тех командах, где требуется указать название и год, пожалуйста копируй эти данные из команд /find_film_ ; /print_queue_
 /find_film_ <NAME> - я буду искать фильм по названию, написанному после команды
 /about_film_ <NAME>. <AGE> - я постараюсь предоставить тебе больше информации о данном фильме
 /add_film_ <NAME>. <AGE> - добавлю этот фильм в конец твоей очереди фильмов
@@ -34,16 +35,15 @@ def help_bot(message):
 
 @bot.message_handler(commands=['find_film_'])
 def find_film(message):
-    #try:
-    if True:
+    try:
         #bot.send_message(message.chat.id, message.text.split('_')[2])
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film_lis = Find_and_Parse.parse_film(html)
         for fil in film_lis:
             bot.send_message(message.chat.id, str(fil.keys())[12:-3])
 
-    #except:
-        #bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+    except:
+        bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
 
 @bot.message_handler(commands=['about_film_'])
 def about_film(message):
