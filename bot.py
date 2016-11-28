@@ -2,8 +2,19 @@ import config
 import telebot
 import ptwee_db_orm
 import Find_and_Parse
+import logging
 
+logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(asctime)s] %(message)s'
+                    ,level=logging.WARNING, filename='mylog.log')
+
+logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(asctime)s] %(message)s'
+                    ,level=logging.INFO, filename='mylog1.log')
 bot =telebot.TeleBot(config.token)
+
+@bot.message_handler()
+def Porgat(message):
+    bot.send_message(322887195, 'Катя, привет, могу писать так, а добавить в телеграмме нет, я неудачник')
+
 @bot.message_handler(commands=['start'])
 def welcome(message):
     text ='''Привет.
@@ -44,6 +55,8 @@ def find_film(message):
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+        logging.warning('Возникла проблема с добавлением фильма - ' + message.text.split('_')[2] +
+                        " у юзера - " + str(message.chat.id) )
 
 @bot.message_handler(commands=['about_film_'])
 def about_film(message):
@@ -68,11 +81,12 @@ def about_film(message):
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+        logging.warning('Возникла проблема с поиском информации о фильме - ' + message.text.split('_')[2] +
+                        " у юзера - " + str(message.chat.id))
 
 @bot.message_handler(commands=['add_film_'])
 def add_film(message):
-    #try:
-    if True:
+    try:
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film = Find_and_Parse.parse_film(html)
         dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
@@ -80,10 +94,15 @@ def add_film(message):
         if not bool:
             ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']), str(dict_film['actors']),
                      str(dict_film['reit']), str(dict_film['genre']), str(message.chat.id))
-        bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
 
-    #except:
-        #bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+        bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
+        logging.info("Пользователю - " + str(message.chat.id) + " был добавлен фильм - " + dict_film['name'])
+
+    except:
+        bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+        logging.warning('Возникла проблема с добавлением фильма - ' + message.text.split('_')[2] +
+                        " у юзера - " + str(message.chat.id))
+
 
 @bot.message_handler(commands=['print_queue_'])
 def print_queue(message):
@@ -94,6 +113,7 @@ def print_queue(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
+        logging.error("Непредвиденная ошибка при выводе фильма у пользователя - " + str(message.chat.id))
 
 @bot.message_handler(commands=['print_first_'])
 def print_first(message):
@@ -103,12 +123,14 @@ def print_first(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
+        logging.error("Непредвиденная ошибка при выводе фильма у пользователя - " + str(message.chat.id))
 
 @bot.message_handler(commands=['pop_film_'])
 def pop_film(message):
     try:
         name = ptwee_db_orm.pop(message.chat.id)
         bot.send_message(message.chat.id, 'Удалил фильм - ' + name)
+        logging.info(" У пользователя - " + str(message.chat.id) + " был удален фильм - " + name)
 
     except:
         bot.send_message(message.chat.id, 'Очередь уже пуста, нечего удалять')
@@ -121,6 +143,7 @@ def del_film(message):
         age = film.split('. ')[1]
         name = ptwee_db_orm.del_film(message.chat.id, name, age)
         bot.send_message(message.chat.id, "Удалил фильм - " + name)
+        logging.info(" У пользователя - " + str(message.chat.id) + " был удален фильм - " + name)
 
     except:
         bot.send_message(message.chat.id, 'Такого фильма нет в очереди, нечего удалять')
@@ -145,6 +168,9 @@ def print_up_age(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
+        logging.error("Непредвиденная ошибка при выводе фильмов вышедших после года - " +
+                       str(message.text.split('_ ')[1]) + " у пользователя - " + str(message.chat.id))
+
 
 @bot.message_handler(commands=['print_up_reit_'])
 def print_up_reit(message):
@@ -158,6 +184,8 @@ def print_up_reit(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
+        logging.error("Непредвиденная ошибка при выводе фильмов с рейтингом выше - " +
+                      str(message.text.split('_ ')[1]) + " у пользователя - " + str(message.chat.id))
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
