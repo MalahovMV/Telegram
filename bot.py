@@ -11,10 +11,6 @@ logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(as
                     ,level=logging.INFO, filename='mylog1.log')
 bot =telebot.TeleBot(config.token)
 
-@bot.message_handler()
-def Porgat(message):
-    bot.send_message(322887195, 'Катя, привет, могу писать так, а добавить в телеграмме нет, я неудачник')
-
 @bot.message_handler(commands=['start'])
 def welcome(message):
     text ='''Привет.
