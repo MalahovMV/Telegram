@@ -5,10 +5,8 @@ import Find_and_Parse
 import logging
 
 logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(asctime)s] %(message)s'
-                    ,level=logging.WARNING, filename='mylog.log')
+                    ,level=logging.INFO, filename='mylog.log')
 
-logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(asctime)s] %(message)s'
-                    ,level=logging.INFO, filename='mylog1.log')
 bot =telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['start'])
@@ -21,7 +19,8 @@ def welcome(message):
 Если возникнут вопросы, используй команду /help
 С любовью твой Kinobot
 '''
-    bot.send_message(message.chat.id,text )
+    ptwee_db_orm.add_user(message.chat.id)
+    bot.send_message(message.chat.id,text)
 
 @bot.message_handler(commands=['help'])
 def help_bot(message):
@@ -43,7 +42,6 @@ def help_bot(message):
 @bot.message_handler(commands=['find_film_'])
 def find_film(message):
     try:
-        #bot.send_message(message.chat.id, message.text.split('_')[2])
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film_lis = Find_and_Parse.parse_film(html)
         for film in film_lis:
@@ -66,7 +64,6 @@ def about_film(message):
             bot.send_message(message.chat.id, text + 'dshsghd')
 
         else:
-            #bot.send_message(message.chat.id, message.text.split('_')[2])
             html = Find_and_Parse.get_html(message.text.split('_')[2])
             film = Find_and_Parse.parse_film(html)
             dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
@@ -86,11 +83,12 @@ def add_film(message):
         html = Find_and_Parse.get_html(message.text.split('_')[2])
         film = Find_and_Parse.parse_film(html)
         dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
-        bool = ptwee_db_orm.film_in(dict_film['name'], dict_film['age'], str(message.chat.id))
+        bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
         if not bool:
             ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']), str(dict_film['actors']),
-                     str(dict_film['reit']), str(dict_film['genre']), str(message.chat.id))
+                     str(dict_film['reit']), str(dict_film['genre']))
 
+        ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
         bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
         logging.info("Пользователю - " + str(message.chat.id) + " был добавлен фильм - " + dict_film['name'])
 
@@ -147,7 +145,12 @@ def del_film(message):
 @bot.message_handler(commands=['change_position_'])
 def change_position(message):
     try:
-        bot.send_message(message.chat.id, message.text.split('.')[1])
+        text = message.text.split('_ ')[1].split('. ')
+        name = text[0]
+        age = text[1]
+        pos = text[2]
+        ptwee_db_orm.change_position(message.chat.id, name, age, pos)
+        bot.send_message(message.chat.id, "Поставил фильм на нужную позицию, можешь просмотреть очередь с помощью /print_queue_")
 
     except:
         bot.send_message(message.chat.id, 'Не могу выполнить данную операцию, позиция/фильм недоступны')

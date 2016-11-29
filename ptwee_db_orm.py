@@ -10,30 +10,73 @@ class Film(Model):
     actors = CharField()
     reit = CharField()
     genre = CharField()
-    user_id = CharField()
 
     class Meta:
         database = db # This model uses the "Film_by_peweee.db" database.
 
-def add_film(name_film , film_id, year_release, actors, reit, genre, user_id):
+class User(Model):
+    user_id = CharField(primary_key=True)
+    lis_film = CharField()
+
+    class Meta:
+        database = db # This model uses the "Film_by_peweee.db" database.
+
+def add_user(user_id):
+    user = User.select().where(User.user_id == user_id)
+    if not user:
+        user = User.create(user_id=user_id, lis_film='')
+        user.save()
+
+def add_film(name_film , film_id, year_release, actors, reit, genre):
     some_film = Film.create(name_film=name_film,film_id=film_id,year_release=year_release,
                             actors=actors,reit=reit,
-                            genre=genre, user_id=user_id)
+                            genre=genre)
     some_film.save()
 
+def add_film_user(name, age, user_id):
+    for user in User.select().where(User.user_id == user_id):
+        for film in Film.select().where((Film.name_film == name) and (Film.year_release == age)):
+            if not (str(film.film_id) in user.lis_film):
+                if user.lis_film:
+                    user.lis_film += ',' + str(film.film_id)
+
+                else:
+                    user.lis_film += str(film.film_id)
+
+                user.save()
+
 def del_film(user_id, name, age):
-    for film in Film.select().where(Film.user_id == user_id):
-        if (film.name_film == name) and (film.year_release == age):
-            nam = film.name_film
-            film.delete_instance()
-            break
+
+    for user in User.select().where(User.user_id == user_id):
+        film_lis = str(user.lis_film)
+        film_lis = film_lis.split(',')
+        nam =''
+        for film_id in film_lis:
+            for film in Film.select().where(Film.film_id == int(film_id)):
+                if ((film.name_film == name) and (film.year_release == age)):
+                    nam = name
+                    id = film_id
+
+        film_lis = film_lis[:film_lis.index(id)] + film_lis[film_lis.index(id) + 1:]
+        lis_film =''
+        for film in film_lis:
+            lis_film += str(film) + ','
+
+        lis_film = lis_film[:-1]
+        user.lis_film = lis_film
+        user.save()
 
     return nam
 
 def print_films(user_id):
     film_lis = []
-    for film in Film.select().where(Film.user_id == user_id):
-        film_lis.append(str('%s. %s ' % (film.name_film, film.year_release)))
+    for user in User.select().where(User.user_id == user_id):
+        movie_lis = str(user.lis_film)
+        movie_lis = movie_lis.split(',')
+        film_lis = []
+        for film_id in movie_lis:
+            for film in Film.select().where(Film.film_id == film_id ):
+                film_lis.append(str('%s. %s ' % (film.name_film, film.year_release)))
 
     return film_lis
 
@@ -48,28 +91,19 @@ def return_film(name, age):
     return False
 
 
-def film_in(name, age, user_id):
-    #flag = False
-    #for film in Film.select():
-     #   if (film.name_film == name) and (film.year_release == age):
-      #      flag = True
-       #     break
-
-    #if flag:
-     #   film.user_id += ' ,' + user_id
-      #  return True
-
-    #else:
-    return False
-
 def is_checked():
     db.connect()
     if Film.table_exists():
-        #print("уже существую, дружище, не создавай новую я же обижусь) ")
-        return True
+        pass
     else:
         db.create_tables([Film])
-        return False
+
+    if User.table_exists():
+        pass
+
+    else:
+        db.create_tables([User])
+
 
 def return_id_film():
     empty_position = find_empty()
@@ -98,38 +132,83 @@ def find_empty():
     return empty_pos
 
 def pop(user_id):
-    for film in Film.select().where(Film.user_id == user_id):
-        name = film.name_film
-        film.delete_instance()
-        break
+    for user in User.select().where(User.user_id == user_id):
+        name = print_films(user_id)[0]
+        try:
+            user.lis_film = user.lis_film[2:]
+
+        except:
+            user.lis_film = ''
+
+        user.save()
 
     return name
 
 def return_up_age(user_id, age):
-    film_lis =[]
-    for film in Film.select().where(Film.user_id == user_id):
-        if film.year_release > age:
-            film_lis.append(str(film.name_film + ' ' + film.year_release))
+    film_list =[]
+    for user in User.select().where(User.user_id == user_id):
+        film_lis = str(user.lis_film).split(',')
+        for film_id in film_lis:
+            for film in Film.select().where(Film.film_id == film_id):
+                if film.year_release > age:
+                    film_list.append(str(film.name_film + ' ' + film.year_release))
 
-    return film_lis
+    return film_list
 
 def return_up_reit(user_id, reit):
-    film_lis =[]
-    for film in Film.select().where(Film.user_id == user_id):
-        if film.reit > reit:
-            film_lis.append(str(film.name_film + ' ' + film.year_release + ' ' + 'Reiting: ' + film.reit))
+    film_list = []
+    for user in User.select().where(User.user_id == user_id):
+        film_lis = str(user.lis_film).split(',')
+        for film_id in film_lis:
+            for film in Film.select().where(Film.film_id == film_id):
+                if film.reit > reit:
+                    film_list.append(str(film.name_film + ' ' + film.year_release + ' ' + film.reit))
 
-    return film_lis
+    return film_list
+
+def change_position(user_id, name, age, pos):
+    for user in User.select().where(User.user_id == user_id):
+        film_lis = str(user.lis_film)
+        film_lis = film_lis.split(',')
+        for film_id in film_lis:
+            for film in Film.select().where(Film.film_id == int(film_id)):
+                if ((film.name_film == name) and (film.year_release == age)):
+                    id = film_id
+
+        pos = int(pos) - 1
+        if pos >= len(film_lis):
+            pos = len(film_lis) - 1
+
+        pos_id = film_lis.index(id)
+        if pos_id > pos:
+            film_lis = film_lis[:pos] + list(id) + film_lis[pos : pos_id] + film_lis[pos_id +1  :]
+
+        if pos_id < pos:
+            film_lis = film_lis[:pos_id]  + film_lis[pos_id + 1: pos + 1] + list(id) + film_lis[pos + 1:]
+
+        lis_film = ''
+        for film in film_lis:
+            lis_film += str(film) + ','
+
+        lis_film = lis_film[:-1]
+        user.lis_film = lis_film
+        user.save()
+
 
 if __name__ == "__main__":
     is_checked()
     #print_films()
-    print(find_empty())
+   # print(find_empty())
     text = ''
     for film in Film.select():
         text += 'Название: ' + film.name_film + "\nГод выхода: " + film.year_release
         text += "\nРежзисер и актеры: " + film.actors + "\nЖанр: " + film.genre
-        text += "\nРейтинг: " + film.reit + "\n User_id = "+ film.user_id + "\n\n"
+        text += "\nРейтинг: " + film.reit + "\n\n"
+
+    print(text)
+    text =''
+    for user in User.select():
+        text += 'Название: ' + user.user_id + "\nГод выхода: " + user.lis_film + '\n\n'
 
     print(text)
 
