@@ -194,17 +194,30 @@ def change_position(user_id, name, age, pos):
         user.lis_film = lis_film
         user.save()
 
+def del_unusable_film():
+    set_id = set()
+    for user in User.select():
+        film_lis = str(user.lis_film)
+        film_lis = film_lis.split(',')
+        for film_id in film_lis:
+                set_id |= set(film_id)
+
+    for film in Film.select():
+        if not (str(film.film_id) in list(set_id)):
+            film.delete_instance()
+
+    return list(set_id)
 
 if __name__ == "__main__":
     is_checked()
-    #print_films()
-   # print(find_empty())
+    print(find_empty())
     text = ''
     for film in Film.select():
         text += 'Название: ' + film.name_film + "\nГод выхода: " + film.year_release
         text += "\nРежзисер и актеры: " + film.actors + "\nЖанр: " + film.genre
         text += "\nРейтинг: " + film.reit + "\n\n"
 
+    #print(del_unusable_film())
     print(text)
     text =''
     for user in User.select():
