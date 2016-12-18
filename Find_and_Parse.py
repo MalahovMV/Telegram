@@ -37,7 +37,7 @@ def parse_find(html):
     list_reit= str(reload_name).split(',')
     reit = {}
     reit['IMDb'] = list_reit[1][1:5]
-    if not reit:
+    if reit == ("']"):
         reit['IMDb'] = ' Отсутствует'
 
     name = str(soup.find('h1', {'class': 'view__title'}).text).replace('\n','').strip().replace('\xa0', ' ')
