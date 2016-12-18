@@ -1,6 +1,5 @@
 from grab import  Grab
 from  bs4 import BeautifulSoup
-import re
 import random
 
 
@@ -106,6 +105,3 @@ def catching_rand_film(genre):
     elif genre == 'any':
         random.shuffle(required_genre)
         return random_choice(required_genre[0])
-
-if __name__ == '__main__':
-    print(catching_rand_film('melodrama'))

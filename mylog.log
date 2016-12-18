@@ -10,3 +10,10 @@ bot.py[LINE:295]#WARNING  [2016-12-18 15:22:53,092] Возникла пробл�
 bot.py[LINE:295]#WARNING  [2016-12-18 15:24:00,840] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/horror
 bot.py[LINE:295]#WARNING  [2016-12-18 15:49:20,431] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/adventures
 bot.py[LINE:295]#WARNING  [2016-12-18 15:49:49,959] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/adventures
+__init__.py[LINE:224]#ERROR    [2016-12-18 16:19:17,819] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-18 16:19:19,148] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-18 16:19:21,239] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:79]#WARNING  [2016-12-18 16:44:17,020] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/find_film_ Человек-паук

@@ -1,8 +1,16 @@
 import config
-import  telebot
+import telebot
 import ptwee_db_orm
 import Find_and_Parse
 import logging
+
+# Обусловлено особенностями поиска на сайте, который был распаршен
+def del_dash(string):
+    for j in range(len(string)):
+        if string[j] == '-':
+            string = string[:j] + ' ' + string[j + 1:]
+
+    return string
 
 #В случае пустого или некорректного запроса сайт создает именно такой ответ
 empty_req = [{'Иван Царевич и Серый Волк 2, 2013,':
@@ -32,16 +40,17 @@ def welcome(message):
 
 @bot.message_handler(commands=['help'])
 def help_bot(message):
-    text = '''Можешь со мной общаться посредством команд, обязательно обрати внимание на нижнее подчеркивание после каждой команды:
-В тех командах, где требуется указать название и год, пожалуйста копируй эти данные из команд /find_film_ ; /print_queue_
+    text = '''Можешь со мной общаться посредством команд, обязательно обрати внимание на нижнее подчеркивание после каждой команды.
+Обязательно обрати внимание на команды, в которых обязательно указание года выхода фильма,
+без этого поиск будет работать не всегда верно, так как существуют фильмы с одинаковым названием, но разного года выхода.
 /find_film_ <NAME> - я буду искать фильм по названию, написанному после команды
-/about_film_ <NAME>. <AGE> - я постараюсь предоставить тебе больше информации о данном фильме
-/add_film_ <NAME>. <AGE> - добавлю этот фильм в конец твоей очереди фильмов
+/about_film_ <NAME> <AGE> - я постараюсь предоставить тебе больше информации о данном фильме, пожалуйста не забывай вбивать год
+/add_film_ <NAME>  <AGE> - добавлю этот фильм в конец твоей очереди фильмов, пожалуйста не забывай вбивать год
 /print_queue_ - выведу на экран все фильмы, которые ты выбрал, в порядке очереди
 /print_first_ - выведу первый фильм из твоей очереди на экран
 /pop_film_ - удалю первый фильм в очереди
-/del_film_ <NAME>. <AGE> - удалю фильм из очереди по его названию
-/change_position_ <NAME>. <AGE>. <POSITION> - переставлю указанный тобою фильм в указанную тобой позицию
+/del_film_ <NAME>  <AGE> - удалю фильм из очереди по его названию, пожалуйста не забывай вбивать год
+/change_position_ <NAME>  <AGE>  <POSITION> - переставлю указанный тобою фильм в указанную тобой позицию, пожалуйста не забывай вбивать год
 /print_up_age_ <YEAR> - выведу фильмы из твоей очереди, которые вышли после указанного тобою года
 /print_up_reit_ <REIT> - выведу фильмы из твоей очереди, рейтинг которых выше указанного тобою
 /add_rand_ - предложу тебе выбрать жанр, а потом добавлю тебе в очередь случайный фильм этого жанра
@@ -52,11 +61,7 @@ def help_bot(message):
 def find_film(message):
     try:
         film = message.text.split('_')[2]
-        # Обусловлено особенностями поиска на сайте, который был распаршен
-        for j in range(len(film)):
-            if film[j] == '-':
-                film = film[:j] + ' ' + film[j + 1:]
-
+        film = del_dash(film)
         html = Find_and_Parse.get_html(film)
         film_lis = Find_and_Parse.parse_film(html)
         if film_lis == empty_req:
@@ -64,7 +69,7 @@ def find_film(message):
 
         else:
             for film in film_lis:
-                bot.send_message(message.chat.id, str(film.keys())[12:-3])
+                bot.send_message(message.chat.id, str(film.keys())[12:-4])
 
             bot.send_message(message.chat.id, '''Хочешь увидеть более подробную информацию о каком-либо фильме или добавить его себе в очередь для просмотра?
 Тогда введи одну из комманд  about_film_ или add_film_ а после них название фильма и год его выхода
@@ -85,11 +90,8 @@ def about_film(message):
 
             else:
                 i -= 1
-        #Обусловлено особенностями поиска на сайте, который был распаршен
-        for j in range(len(film)):
-            if film[j] == '-':
-                film = film[:j] + ' ' + film[j + 1:]
 
+        film = del_dash(film)
         name = film[:i - 4]
         age = film[i - 3:]
         text = ptwee_db_orm.return_film(name,age)
@@ -114,11 +116,7 @@ def about_film(message):
 def add_film(message):
     try:
         film = message.text.split('_')[2]
-        # Обусловлено особенностями поиска на сайте, который был распаршен
-        for j in range(len(film)):
-            if film[j] == '-':
-                film = film[:j] + ' ' + film[j + 1:]
-
+        film = del_dash(film)
         html = Find_and_Parse.get_html(film)
         film = Find_and_Parse.parse_film(html)
         dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
@@ -128,7 +126,7 @@ def add_film(message):
                      str(dict_film['reit']), str(dict_film['genre']))
 
         ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
-        bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
+        bot.send_message(message.chat.id, 'Добавил тебе новый фильм - ' + dict_film['name'])
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
@@ -169,6 +167,7 @@ def pop_film(message):
 def del_film(message):
     try:
         film = message.text.split('_ ')[1]
+        film = del_dash(film)
         i = len(film) - 1
         while True:
             if (film[i] >= '0') and (film[i] <= '9'):
@@ -189,10 +188,6 @@ def del_film(message):
 def change_position(message):
     try:
         text = message.text.split('_ ')[1]
-        for j in range(len(text)):
-            if text[j] == '-':
-                text = text[:j] + ' ' + text[j + 1:]
-
         i = len(text) - 1
         while True:
             if (text[i] >= '0') and (text[i] <= '9'):
@@ -221,7 +216,6 @@ def change_position(message):
 
         age = text[i - 3: i + 1]
         name = text[1:i - 4]
-        print(name,age,pos)
         ptwee_db_orm.change_position(message.chat.id, name, age, pos)
         bot.send_message(message.chat.id, "Поставил фильм на нужную позицию, можешь просмотреть очередь с помощью /print_queue_")
 
@@ -278,7 +272,6 @@ def choose_ganre(message):
 def add_rand(message):
     try:
         html = Find_and_Parse.catching_rand_film(message.text[1:])
-        print(html)
         dict_film = Find_and_Parse.parse_find(html)
         bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
         if not bool:
@@ -287,7 +280,7 @@ def add_rand(message):
                                   str(dict_film['reit']), str(dict_film['genre']))
 
         ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
-        bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
+        bot.send_message(message.chat.id, 'Добавил тебе новый фильм - ' + dict_film['name'])
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')

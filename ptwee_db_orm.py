@@ -29,7 +29,6 @@ def add_film_user(name, age, user_id):
                 user.save()
 
 def del_film(user_id, name, age):
-
     for user in User.select().where(User.user_id == user_id):
         film_lis = str(user.lis_film)
         film_lis = film_lis.split(',')
@@ -191,7 +190,5 @@ def del_unusable_film():
 
     return list(set_id)
 
-if __name__ == "__main__":
-    is_checked()
 
 
