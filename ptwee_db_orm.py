@@ -1,12 +1,11 @@
-from peewee import *
 from Class import Film,User
 
-db = SqliteDatabase('Film_by_peweee.db')
-
-
 def add_user(user_id):
-    user = User.select().where(User.user_id == user_id)
-    if not user:
+    flag = False
+    for user in User.select().where(User.user_id == user_id):
+        flag = True
+
+    if not flag:
         user = User.create(user_id=user_id, lis_film='')
         user.save()
 
@@ -71,21 +70,6 @@ def return_film(name, age):
             return text
 
     return False
-
-
-def is_checked():
-    db.connect()
-    if Film.table_exists():
-        pass
-    else:
-        db.create_tables([Film])
-
-    if User.table_exists():
-        pass
-
-    else:
-        db.create_tables([User])
-
 
 def return_id_film():
     empty_position = find_empty()

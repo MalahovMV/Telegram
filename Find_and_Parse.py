@@ -18,9 +18,6 @@ def parse_film(html):
     for i in range(len(name)):
         film_list.append({(str(name[i].text).replace('\n','')).replace('\xa0',' ').strip() + ', ' + str(inf[i])[50:55]:name[i].get('href')})
 
-    if len(film_list) > 6:
-        film_list = film_list[:6]
-
     return film_list
 
 

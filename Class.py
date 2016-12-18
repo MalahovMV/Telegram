@@ -19,3 +19,19 @@ class User(Model):
 
     class Meta:
         database = db # This model uses the "Film_by_peweee.db" database.
+
+def is_checked():
+    db.connect()
+    if Film.table_exists():
+        pass
+    else:
+        db.create_tables([Film])
+
+    if User.table_exists():
+        pass
+
+    else:
+        db.create_tables([User])
+
+if __name__ == '__main__':
+    is_checked()
