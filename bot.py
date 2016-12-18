@@ -1,5 +1,5 @@
 import config
-import telebot
+import  telebot
 import ptwee_db_orm
 import Find_and_Parse
 import logging
@@ -268,7 +268,8 @@ def choose_ganre(message):
     bot.send_message(message.chat.id, '/thriller')
     bot.send_message(message.chat.id, '/fiction')
 
-@bot.message_handler()
+command = ['any', 'arthouse', 'action', 'military', 'detective', 'adult', 'kids', 'comedy', 'melodrama', 'adventures', 'horror', 'thriller', 'fiction']    
+@bot.message_handler(commands=command)
 def add_rand(message):
     try:
         html = Find_and_Parse.catching_rand_film(message.text[1:])
@@ -288,4 +289,5 @@ def add_rand(message):
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
+
     
