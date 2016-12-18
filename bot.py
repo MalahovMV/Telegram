@@ -1,42 +1,19 @@
 import config
-import asyncio
 import  telebot
-from sys import stdin, exit
-from argparse import ArgumentParser
 import ptwee_db_orm
 import Find_and_Parse
 import logging
 
-class tcpclient:
-  def __init__(self, reader, writer):
-    self.writer = writer
-    self.reader = reader
-
-@asyncio.coroutine
-def chat_recv(socket):
-  while True:
-    echo = yield from socket.recv()
-    if echo is None: break
-    print ("%s"%echo)
-
-@asyncio.coroutine
-def chat_send(socket):
-  reader = asyncio.StreamReader()
-  yield from asyncio.get_event_loop().connect_read_pipe(lambda: asyncio.StreamReaderProtocol(reader), stdin)
-  while True:
-    msg = (yield from reader.readline()).decode('utf-8').strip('\r\n')
-    if msg == "quit": exit() #Type 'quit' to exit the program
-    yield from socket.send(msg)
-
-@asyncio.coroutine
-def chat(loop,host,port):
-  reader, writer = yield from asyncio.open_connection(host, port, loop=loop)
-  client = tcpclient(reader, writer)
-  tasks = [chat_recv(client), chat_send(client)]
-  yield from asyncio.wait(tasks)
-
+#В случае пустого или некорректного запроса сайт создает именно такой ответ
+empty_req = [{'Иван Царевич и Серый Волк 2, 2013,':
+'http://megogo.net/ru/view/1148471-ivan-carevich-i-seryy-volk-2.html'},
+{'Малавита, 2013,': 'http://megogo.net/ru/view/1321981-malavita.html'},
+{'Superнянь (Супернянь), 2014,': 'http://megogo.net/ru/view/1373621-supernyan-supernyan.html'},
+{'Паркер, 2012,': 'http://megogo.net/ru/view/1197381-parker.html'},
+{'Судья Дредд, 2012,': 'http://megogo.net/ru/view/94941-sudya-dredd.html'},
+{'Проповедник с пулеметом, 2011,': 'http://megogo.net/ru/view/1604261-propovednik-s-pulemetom.html'}]
 logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(asctime)s] %(message)s'
-                    ,level=logging.INFO, filename='mylog.log')
+                    ,level=logging.WARNING, filename='mylog.log')
 
 bot =telebot.TeleBot(config.token)
 
@@ -67,35 +44,61 @@ def help_bot(message):
 /change_position_ <NAME>. <AGE>. <POSITION> - переставлю указанный тобою фильм в указанную тобой позицию
 /print_up_age_ <YEAR> - выведу фильмы из твоей очереди, которые вышли после указанного тобою года
 /print_up_reit_ <REIT> - выведу фильмы из твоей очереди, рейтинг которых выше указанного тобою
+/add_rand_ - предложу тебе выбрать жанр, а потом добавлю тебе в очередь случайный фильм этого жанра
     '''
     bot.send_message(message.chat.id, text)
 
 @bot.message_handler(commands=['find_film_'])
 def find_film(message):
     try:
-        html = Find_and_Parse.get_html(message.text.split('_')[2])
+        film = message.text.split('_')[2]
+        # Обусловлено особенностями поиска на сайте, который был распаршен
+        for j in range(len(film)):
+            if film[j] == '-':
+                film = film[:j] + ' ' + film[j + 1:]
+
+        html = Find_and_Parse.get_html(film)
         film_lis = Find_and_Parse.parse_film(html)
-        for film in film_lis:
-            bot.send_message(message.chat.id, str(film.keys())[12:-3])
+        if film_lis == empty_req:
+            bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
+
+        else:
+            for film in film_lis:
+                bot.send_message(message.chat.id, str(film.keys())[12:-3])
+
+            bot.send_message(message.chat.id, '''Хочешь увидеть более подробную информацию о каком-либо фильме или добавить его себе в очередь для просмотра?
+Тогда введи одну из комманд  about_film_ или add_film_ а после них название фильма и год его выхода
+Можешь просто скопировать в команду один из тех фильмов, которые предложил тебе я''')
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
-        logging.warning('Возникла проблема с добавлением фильма - ' + message.text.split('_')[2] +
-                        " у юзера - " + str(message.chat.id) )
+        logging.warning('Возникла проблема с добавлением фильма у юзера - ' + str(message.chat.id) + ' При запросе' +  message.text)
 
-@bot.message_handler(commands=['about_film_'])
+@bot.message_handler(commands='about_film_')
 def about_film(message):
     try:
         film = message.text.split('_')[2]
-        name = film.split(', ')[0][1:]
-        age = film.split(', ')[1][:-1]
+        i = len(film) - 1
+        while True:
+            if (film[i] >= '0') and (film[i] <= '9'):
+                break
+
+            else:
+                i -= 1
+        #Обусловлено особенностями поиска на сайте, который был распаршен
+        for j in range(len(film)):
+            if film[j] == '-':
+                film = film[:j] + ' ' + film[j + 1:]
+
+        name = film[:i - 4]
+        age = film[i - 3:]
         text = ptwee_db_orm.return_film(name,age)
 
         if text:
-            bot.send_message(message.chat.id, text + 'dshsghd')
+            bot.send_message(message.chat.id, text)
 
         else:
-            html = Find_and_Parse.get_html(message.text.split('_')[2])
+            html = Find_and_Parse.get_html(film)
             film = Find_and_Parse.parse_film(html)
             dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
             text = 'Название: ' + dict_film['name'] + "\nГод выхода: " + dict_film['age']
@@ -105,13 +108,18 @@ def about_film(message):
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
-        logging.warning('Возникла проблема с поиском информации о фильме - ' + message.text.split('_')[2] +
-                        " у юзера - " + str(message.chat.id))
+        logging.warning('Возникла проблема с поиском информации о фильме у юзера - ' + str(message.chat.id) + ' При запросе' +  message.text)
 
 @bot.message_handler(commands=['add_film_'])
 def add_film(message):
     try:
-        html = Find_and_Parse.get_html(message.text.split('_')[2])
+        film = message.text.split('_')[2]
+        # Обусловлено особенностями поиска на сайте, который был распаршен
+        for j in range(len(film)):
+            if film[j] == '-':
+                film = film[:j] + ' ' + film[j + 1:]
+
+        html = Find_and_Parse.get_html(film)
         film = Find_and_Parse.parse_film(html)
         dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
         bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
@@ -121,12 +129,10 @@ def add_film(message):
 
         ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
         bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
-        logging.info("Пользователю - " + str(message.chat.id) + " был добавлен фильм - " + dict_film['name'])
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
-        logging.warning('Возникла проблема с добавлением фильма - ' + message.text.split('_')[2] +
-                        " у юзера - " + str(message.chat.id))
+        logging.warning('Возникла проблема с добавлением фильма у юзера - ' + str(message.chat.id) + ' При запросе' +  message.text)
 
 
 @bot.message_handler(commands=['print_queue_'])
@@ -138,7 +144,7 @@ def print_queue(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
-        logging.error("Непредвиденная ошибка при выводе фильма у пользователя - " + str(message.chat.id))
+        logging.error("Непредвиденная ошибка при выводе фильма у пользователя - " + str(message.chat.id) + ' При запросе' +  message.text)
 
 @bot.message_handler(commands=['print_first_'])
 def print_first(message):
@@ -148,14 +154,13 @@ def print_first(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
-        logging.error("Непредвиденная ошибка при выводе фильма у пользователя - " + str(message.chat.id))
+        logging.error("Непредвиденная ошибка при выводе фильма у пользователя - " + str(message.chat.id) + ' При запросе' +  message.text)
 
 @bot.message_handler(commands=['pop_film_'])
 def pop_film(message):
     try:
         name = ptwee_db_orm.pop(message.chat.id)
         bot.send_message(message.chat.id, 'Удалил фильм - ' + name)
-        logging.info(" У пользователя - " + str(message.chat.id) + " был удален фильм - " + name)
 
     except:
         bot.send_message(message.chat.id, 'Очередь уже пуста, нечего удалять')
@@ -163,12 +168,19 @@ def pop_film(message):
 @bot.message_handler(commands=['del_film_'])
 def del_film(message):
     try:
-        film = message.text.split('_')[2]
-        name = film.split('. ')[0][1:]
-        age = film.split('. ')[1]
+        film = message.text.split('_ ')[1]
+        i = len(film) - 1
+        while True:
+            if (film[i] >= '0') and (film[i] <= '9'):
+                break
+
+            else:
+                i -= 1
+
+        name = film[:i - 4]
+        age = film[i - 3:]
         name = ptwee_db_orm.del_film(message.chat.id, name, age)
         bot.send_message(message.chat.id, "Удалил фильм - " + name)
-        logging.info(" У пользователя - " + str(message.chat.id) + " был удален фильм - " + name)
 
     except:
         bot.send_message(message.chat.id, 'Такого фильма нет в очереди, нечего удалять')
@@ -176,10 +188,40 @@ def del_film(message):
 @bot.message_handler(commands=['change_position_'])
 def change_position(message):
     try:
-        text = message.text.split('_ ')[1].split('. ')
-        name = text[0]
-        age = text[1]
-        pos = text[2]
+        text = message.text.split('_ ')[1]
+        for j in range(len(text)):
+            if text[j] == '-':
+                text = text[:j] + ' ' + text[j + 1:]
+
+        i = len(text) - 1
+        while True:
+            if (text[i] >= '0') and (text[i] <= '9'):
+                break
+
+            else:
+                i -= 1
+
+        j = i
+        while True:
+            if not ((text[j] >= '0') and (text[j] <= '9')):
+                break
+
+            else:
+                j -= 1
+
+        pos = text[j + 1:i + 1]
+        text = text[:j + 1]
+        i = len(text) - 1
+        while True:
+            if (text[i] >= '0') and (text[i] <= '9'):
+                break
+
+            else:
+                i -= 1
+
+        age = text[i - 3: i + 1]
+        name = text[1:i - 4]
+        print(name,age,pos)
         ptwee_db_orm.change_position(message.chat.id, name, age, pos)
         bot.send_message(message.chat.id, "Поставил фильм на нужную позицию, можешь просмотреть очередь с помощью /print_queue_")
 
@@ -198,8 +240,7 @@ def print_up_age(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
-        logging.error("Непредвиденная ошибка при выводе фильмов вышедших после года - " +
-                       str(message.text.split('_ ')[1]) + " у пользователя - " + str(message.chat.id))
+        logging.error("Непредвиденная ошибка при выводе фильмов вышедших после года у пользователя - " + str(message.chat.id) + ' При запросе' +  message.text)
 
 
 @bot.message_handler(commands=['print_up_reit_'])
@@ -214,16 +255,44 @@ def print_up_reit(message):
 
     except:
         bot.send_message(message.chat.id, 'Упс, что-то пошло не так')
-        logging.error("Непредвиденная ошибка при выводе фильмов с рейтингом выше - " +
-                      str(message.text.split('_ ')[1]) + " у пользователя - " + str(message.chat.id))
+        logging.error("Непредвиденная ошибка при выводе фильмов с рейтингом у пользователя - " + str(message.chat.id) + ' При запросе' +  message.text)
+
+@bot.message_handler(commands=['add_rand_'])
+def choose_ganre(message):
+    bot.send_message(message.chat.id, 'Нажми на одну из команд')
+    bot.send_message(message.chat.id, '/any')
+    bot.send_message(message.chat.id, '/arthouse')
+    bot.send_message(message.chat.id, '/action')
+    bot.send_message(message.chat.id, '/military')
+    bot.send_message(message.chat.id, '/detective')
+    bot.send_message(message.chat.id, '/adult')
+    bot.send_message(message.chat.id, '/kids')
+    bot.send_message(message.chat.id, '/comedy')
+    bot.send_message(message.chat.id, '/melodrama')
+    bot.send_message(message.chat.id, '/adventures')
+    bot.send_message(message.chat.id, '/horror')
+    bot.send_message(message.chat.id, '/thriller')
+    bot.send_message(message.chat.id, '/fiction')
+
+@bot.message_handler()
+def add_rand(message):
+    try:
+        html = Find_and_Parse.catching_rand_film(message.text[1:])
+        print(html)
+        dict_film = Find_and_Parse.parse_find(html)
+        bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
+        if not bool:
+            ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']),
+                                  str(dict_film['actors']),
+                                  str(dict_film['reit']), str(dict_film['genre']))
+
+        ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
+        bot.send_message(message.chat.id, 'Добавил тебе новый фильм ' + dict_film['name'])
+
+    except:
+        bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
+        logging.warning('Возникла проблема с добавлением фильма у юзера - ' + str(message.chat.id) + ' При запросе' +  message.text)
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
-    parser = ArgumentParser(description='Chat Client Python3 Script')
-    parser.add_argument('-i', dest='ip', type=str, help='Host IP Address - Optional [Default=127.0.0.1]',
-                        default='127.0.0.1')
-    parser.add_argument('-p', dest='port', type=int, help='Host Port Number - Optional [Default=8888]', default=8888)
-    args = parser.parse_args()
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(chat(loop, args.ip, args.port))
-    loop.close()
+    

@@ -1,25 +1,8 @@
 from peewee import *
+from Class import Film,User
 
 db = SqliteDatabase('Film_by_peweee.db')
 
-
-class Film(Model):
-    name_film = CharField()
-    film_id = IntegerField(primary_key=True)
-    year_release = CharField()
-    actors = CharField()
-    reit = CharField()
-    genre = CharField()
-
-    class Meta:
-        database = db # This model uses the "Film_by_peweee.db" database.
-
-class User(Model):
-    user_id = CharField(primary_key=True)
-    lis_film = CharField()
-
-    class Meta:
-        database = db # This model uses the "Film_by_peweee.db" database.
 
 def add_user(user_id):
     user = User.select().where(User.user_id == user_id)
@@ -53,7 +36,7 @@ def del_film(user_id, name, age):
         nam =''
         for film_id in film_lis:
             for film in Film.select().where(Film.film_id == int(film_id)):
-                if ((film.name_film == name) and (film.year_release == age)):
+                if ((name in film.name_film) and (film.year_release == age)):
                     nam = name
                     id = film_id
 
@@ -172,7 +155,7 @@ def change_position(user_id, name, age, pos):
         film_lis = film_lis.split(',')
         for film_id in film_lis:
             for film in Film.select().where(Film.film_id == int(film_id)):
-                if ((film.name_film == name) and (film.year_release == age)):
+                if ((name in film.name_film) and (film.year_release == age)):
                     id = film_id
 
         pos = int(pos) - 1
@@ -210,19 +193,5 @@ def del_unusable_film():
 
 if __name__ == "__main__":
     is_checked()
-    print(find_empty())
-    text = ''
-    for film in Film.select():
-        text += 'Название: ' + film.name_film + "\nГод выхода: " + film.year_release
-        text += "\nРежзисер и актеры: " + film.actors + "\nЖанр: " + film.genre
-        text += "\nРейтинг: " + film.reit + "\n\n"
-
-    #print(del_unusable_film())
-    print(text)
-    text =''
-    for user in User.select():
-        text += 'Название: ' + user.user_id + "\nГод выхода: " + user.lis_film + '\n\n'
-
-    print(text)
 
 
