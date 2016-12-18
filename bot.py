@@ -3,6 +3,8 @@ import  telebot
 import ptwee_db_orm
 import Find_and_Parse
 import logging
+import sys
+import time
 
 # Обусловлено особенностями поиска на сайте, который был распаршен
 def del_dash(string):
@@ -288,6 +290,14 @@ def add_rand(message):
         logging.warning('Возникла проблема с добавлением фильма у юзера - ' + str(message.chat.id) + ' При запросе' +  message.text)
 
 if __name__ == '__main__':
-    bot.polling(none_stop=True)
+    while True:
+        try:
+            bot.polling(none_stop=True)
+            bot.set_update_listener(listener)
+	
+        except:
+            logging.error('error: {}'.format(sys.exc_info()[0]))
+            time.sleep(5)
+
 
     

@@ -17,3 +17,5 @@ __init__.py[LINE:224]#ERROR    [2016-12-18 16:19:19,148] A request to the Telegr
 __init__.py[LINE:224]#ERROR    [2016-12-18 16:19:21,239] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
 [b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
 bot.py[LINE:79]#WARNING  [2016-12-18 16:44:17,020] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/find_film_ Человек-паук
+bot.py[LINE:298]#ERROR    [2016-12-18 20:46:43,138] error: <class 'TypeError'>
+bot.py[LINE:299]#ERROR    [2016-12-18 20:47:02,956] error: <class 'TypeError'>
