@@ -72,7 +72,7 @@ def random_choice(genre_v):
 
 def catching_rand_film(genre):
     required_genre = ['genres_arthouse','genres_action','genres_military','genres_detective','genres_adult',
-                      'genres_kids','genres_comedy','genres_melodrama','genres_adventures','genres_horror'
+                      'genres_comedy','genres_melodrama','genres_adventures','genres_horror'
                       'genres_thriller','genres_fiction']
 
     if genre == 'arthouse':
@@ -85,8 +85,6 @@ def catching_rand_film(genre):
         return random_choice('genres_detective')
     elif genre == 'adult':
         return random_choice('genres_adult')
-    elif genre == 'kids':
-        return random_choice('genres_kids')
     elif genre == 'comedy':
         return random_choice('genres_comedy')
     elif genre == 'melodrama':

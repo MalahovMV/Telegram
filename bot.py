@@ -272,7 +272,6 @@ def choose_ganre(message):
     bot.send_message(message.chat.id, '/military')
     bot.send_message(message.chat.id, '/detective')
     bot.send_message(message.chat.id, '/adult')
-    bot.send_message(message.chat.id, '/kids')
     bot.send_message(message.chat.id, '/comedy')
     bot.send_message(message.chat.id, '/melodrama')
     bot.send_message(message.chat.id, '/adventures')
@@ -280,7 +279,7 @@ def choose_ganre(message):
     bot.send_message(message.chat.id, '/thriller')
     bot.send_message(message.chat.id, '/fiction')
 
-command = ['any', 'arthouse', 'action', 'military', 'detective', 'adult', 'kids', 'comedy', 'melodrama', 'adventures', 'horror', 'thriller', 'fiction']    
+command = ['any', 'arthouse', 'action', 'military', 'detective', 'adult', 'comedy', 'melodrama', 'adventures', 'horror', 'thriller', 'fiction']
 @bot.message_handler(commands=command)
 def add_rand(message):
     try:
