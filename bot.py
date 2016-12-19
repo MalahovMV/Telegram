@@ -68,7 +68,12 @@ def find_film(message):
         film = del_dash(film)
         html = Find_and_Parse.get_html(film)
         film_lis = Find_and_Parse.parse_film(html)
-        if film_lis == empty_req:
+        count = 0
+        for el in empty_req:
+            if el in film_lis :
+                count += 1
+
+        if count == len(empty_req):
             bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
 
         else:
@@ -107,11 +112,20 @@ def about_film(message):
         else:
             html = Find_and_Parse.get_html(film)
             film = Find_and_Parse.parse_film(html)
-            dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
-            text = 'Название: ' + dict_film['name'] + "\nГод выхода: " + dict_film['age']
-            text +="\nРежзисер и актеры: " + dict_film['actors'] + "\nЖанр: " + dict_film['genre']
-            text +="\nРейтинг: " + dict_film['reit']
-            bot.send_message(message.chat.id, text)
+            count = 0
+            for el in empty_req:
+                if el in film:
+                    count += 1
+
+            if count == len(empty_req):
+                bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
+
+            else:
+                dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
+                text = 'Название: ' + dict_film['name'] + "\nГод выхода: " + dict_film['age']
+                text +="\nРежисер и актеры: " + dict_film['actors'] + "\nЖанр: " + dict_film['genre']
+                text +="\nРейтинг: " + dict_film['reit']
+                bot.send_message(message.chat.id, text)
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
@@ -125,14 +139,23 @@ def add_film(message):
         film = del_dash(film)
         html = Find_and_Parse.get_html(film)
         film = Find_and_Parse.parse_film(html)
-        dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
-        bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
-        if not bool:
-            ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']), str(dict_film['actors']),
+        count = 0
+        for el in empty_req:
+            if el in film:
+                count += 1
+
+        if count == len(empty_req):
+            bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
+
+        else:
+            dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
+            bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
+            if not bool:
+                ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']), str(dict_film['actors']),
                      str(dict_film['reit']), str(dict_film['genre']))
 
-        ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
-        bot.send_message(message.chat.id, 'Добавил тебе новый фильм - ' + dict_film['name'])
+            ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
+            bot.send_message(message.chat.id, 'Добавил тебе новый фильм - ' + dict_film['name'])
 
     except:
         bot.send_message(message.chat.id, 'Извини, не могу обработать такой запрос, посмотри /help')
@@ -303,9 +326,9 @@ if __name__ == '__main__':
     while True:
         try:
             bot.polling(none_stop=True)
-            bot.set_update_listener(listener)
-	
+
         except:
+            bot.set_update_listener(listener)
             logging.error('error: {}'.format(sys.exc_info()[0]))
             time.sleep(5)
 
