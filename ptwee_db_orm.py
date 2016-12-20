@@ -17,15 +17,19 @@ def add_film(name_film , film_id, year_release, actors, reit, genre):
 
 def add_film_user(name, age, user_id):
     for user in User.select().where(User.user_id == user_id):
-        for film in Film.select().where((Film.name_film == name) and (Film.year_release == age)):
-            if not (str(film.film_id) in user.lis_film):
-                if user.lis_film:
-                    user.lis_film += ',' + str(film.film_id)
+        for film in Film.select().where(name == Film.name_film):
+            if film.year_release == age:
+                if not (str(film.film_id) in user.lis_film):
+                    if user.lis_film:
+                        user.lis_film += ',' + str(film.film_id)
 
-                else:
-                    user.lis_film += str(film.film_id)
+                    else:
+                        user.lis_film += str(film.film_id)
 
-                user.save()
+                    if user.lis_film[0] == ',':
+                        user.lis_film = user.lis_film[1:]
+
+                    user.save()
 
 def del_film(user_id, name, age):
     for user in User.select().where(User.user_id == user_id):
@@ -45,6 +49,9 @@ def del_film(user_id, name, age):
 
         lis_film = lis_film[:-1]
         user.lis_film = lis_film
+        if user.lis_film[0] == ',':
+            user.lis_film = user.lis_film[1:]
+
         user.save()
 
     return nam
@@ -101,7 +108,14 @@ def pop(user_id):
     for user in User.select().where(User.user_id == user_id):
         name = print_films(user_id)[0]
         try:
-            user.lis_film = user.lis_film[2:]
+            films = user.lis_film.split(',')
+            films = films[1:]
+            lis_film = ''
+            for film in films:
+                lis_film += str(film) + ','
+
+            lis_film = lis_film[:-1]
+            user.lis_film = lis_film
 
         except:
             user.lis_film = ''
@@ -158,6 +172,9 @@ def change_position(user_id, name, age, pos):
 
         lis_film = lis_film[:-1]
         user.lis_film = lis_film
+        if user.lis_film[0] == ',':
+            user.lis_film = user.lis_film[1:]
+
         user.save()
 
 def del_unusable_film():
@@ -173,6 +190,5 @@ def del_unusable_film():
             film.delete_instance()
 
     return list(set_id)
-
 
 

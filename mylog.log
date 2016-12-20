@@ -15,3 +15,714 @@ bot.py[LINE:162]#WARNING  [2016-12-19 14:46:49,524] Возникла пробл�
 bot.py[LINE:132]#WARNING  [2016-12-19 14:48:40,375] Возникла проблема с поиском информации о фильме у юзера - 322887195 При запросе/about_film_ е 2014
 bot.py[LINE:132]#WARNING  [2016-12-19 14:49:21,685] Возникла проблема с поиском информации о фильме у юзера - 322887195 При запросе/about_film_ е 2014
 bot.py[LINE:132]#WARNING  [2016-12-19 14:49:36,958] Возникла проблема с поиском информации о фильме у юзера - 322887195 При запросе/about_film_ е 2014
+bot.py[LINE:323]#WARNING  [2016-12-20 08:53:18,451] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/detective
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:54:55,068] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:54:56,885] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:54:57,395] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:54:57,913] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:54:58,718] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:54:59,470] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:55:00,714] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:55:02,003] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:55:07,772] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:59:42,382] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 08:59:50,754] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:313]#WARNING  [2016-12-20 09:00:09,959] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/detective
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:10:50,200] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:16:05,529] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:22:54,928] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:23:08,789] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:25:41,893] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:15,263] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:15,826] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:16,322] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:17,089] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:17,892] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:19,188] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:20,445] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:26:24,238] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:27:32,131] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:27:37,144] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:27:42,153] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:27:47,168] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:27:52,181] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:27:57,206] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:02,221] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:07,228] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:12,237] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:17,243] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:22,251] error: <class 'ValueError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:27,258] error: <class 'ValueError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:27,542] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:36,794] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:36,798] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:42,072] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:42,591] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:42,592] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:47,857] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:48,381] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:48,382] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:53,645] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:54,403] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:28:54,404] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:28:59,689] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:00,968] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:00,969] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:06,274] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:08,556] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:08,557] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:13,839] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:14,343] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:14,344] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:20,533] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:24,103] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:24,599] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:24,600] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:29,863] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:30,634] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:30,634] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:35,946] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:37,203] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:37,204] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:42,460] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:44,712] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:44,714] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:50,024] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:54,293] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:29:54,296] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:29:59,554] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:05,469] error: <class 'KeyboardInterrupt'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:08,467] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:08,467] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:10,783] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:11,287] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:11,289] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:13,728] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:14,474] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:14,475] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:16,631] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:17,885] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:17,885] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:19,750] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:22,054] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:22,055] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:23,171] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:27,314] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:27,317] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:27,427] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:27,427] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:32,577] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:32,579] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:32,676] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:32,741] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:37,874] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:37,874] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:38,063] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:38,064] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:43,141] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:43,143] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:43,314] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:43,315] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:48,425] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:48,426] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:48,606] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:48,609] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:53,691] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:53,692] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:53,864] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:53,864] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:58,975] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:58,976] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:30:59,152] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:30:59,153] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:31:04,267] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:31:04,268] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 09:31:04,453] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:318]#ERROR    [2016-12-20 09:31:04,456] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:00:57,111] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:00:57,112] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:02,372] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:02,374] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:07,653] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:07,654] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:10,392] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:10,392] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:12,972] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:13,485] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:13,489] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:15,664] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:16,457] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:16,457] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:18,759] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:19,268] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:19,270] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:21,731] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:22,476] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:22,477] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:24,535] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:25,829] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:25,830] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:27,733] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:30,017] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:30,018] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:31,143] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:31,148] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:35,317] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:35,318] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:36,412] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:36,413] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:40,592] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:40,592] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:41,692] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:41,693] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:45,867] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:45,871] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:46,950] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:46,951] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:51,145] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:51,146] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:52,214] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:52,215] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:56,406] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:56,407] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:01:57,490] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:01:57,593] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:01,721] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:01,722] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:01,760] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:01,761] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:02,884] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:03,411] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:03,421] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:07,017] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:07,037] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:07,038] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:07,551] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:07,553] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:08,696] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:09,475] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:09,476] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:12,336] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:12,832] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:12,833] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:13,602] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:13,603] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:14,740] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:16,983] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:16,984] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:18,101] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:18,852] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:18,852] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:22,238] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:22,239] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:22,363] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:22,364] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:24,108] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:27,501] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:27,502] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:27,620] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:27,621] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:32,354] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:32,354] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:32,751] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:32,879] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:32,879] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:37,627] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:37,627] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:38,142] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:38,143] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:42,931] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:42,934] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:43,408] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:43,411] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:48,214] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:48,214] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:48,672] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:48,672] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:49,013] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:49,014] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:53,500] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:53,935] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:53,936] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:54,292] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:54,292] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:59,239] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:59,240] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:02:59,590] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:02:59,590] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:04,513] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:04,514] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:04,852] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:04,852] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:09,790] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:09,791] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:10,106] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:10,107] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:15,061] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:15,062] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:15,387] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:15,388] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:20,689] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:20,690] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:22,232] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:22,233] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:25,773] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:25,774] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:25,954] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:27,493] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:27,498] error: <class 'RecursionError'>
+bot.py[LINE:309]#WARNING  [2016-12-20 10:03:30,931] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/detective
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:31,033] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:31,034] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:32,772] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:32,772] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:36,277] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:36,281] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:38,035] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:38,036] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:41,548] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:41,549] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:43,316] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:43,317] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:46,799] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:46,800] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:48,612] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:48,613] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:52,057] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:52,059] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:53,880] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:53,881] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:57,305] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:57,305] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:03:59,146] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:03:59,148] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:02,576] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:02,580] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:04,439] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:04,441] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:07,851] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:07,851] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:09,783] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:09,784] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:13,109] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:13,110] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:15,061] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:15,062] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:17,723] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:17,724] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:18,374] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:18,894] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:18,896] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:20,346] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:21,155] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:21,156] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:24,167] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:24,168] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:26,425] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:26,425] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:29,451] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:29,452] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:31,693] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:31,694] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:34,707] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:34,708] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:36,993] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:36,995] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:39,991] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:39,993] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:42,257] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:42,258] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:45,283] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:45,284] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:47,523] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:47,524] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:50,543] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:50,675] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:52,801] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:52,801] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:55,936] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:55,937] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:04:58,060] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:04:58,060] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:01,202] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:01,206] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:03,372] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:03,373] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:06,511] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:06,513] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:08,640] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:08,642] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:11,764] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:11,765] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:13,953] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:13,953] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:17,056] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:17,057] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:19,243] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:19,259] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:22,353] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:22,354] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:24,526] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:24,527] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:27,643] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:27,644] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:29,785] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:29,786] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:32,898] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:32,899] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:35,080] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:35,081] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:38,204] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:38,205] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:40,391] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:40,392] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:43,480] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:43,481] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:45,673] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:45,674] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:48,753] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:48,755] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:50,993] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:50,994] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:54,042] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:54,043] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:56,283] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:56,284] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:05:59,316] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:05:59,318] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:01,609] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:01,610] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:04,573] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:04,574] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:06,919] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:06,919] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:09,847] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:09,849] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:12,190] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:12,192] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:15,122] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:15,123] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:17,446] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:17,447] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:18,778] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:18,780] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:20,419] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:20,924] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:20,925] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:22,746] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:23,545] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:23,546] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:24,071] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:25,330] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:25,331] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:26,203] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:28,472] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:28,473] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:30,595] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:30,596] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:33,729] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:33,730] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:35,898] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:35,899] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:39,020] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:39,021] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:41,174] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:41,174] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:44,296] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:44,297] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:46,460] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:46,460] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:49,571] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:49,572] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:51,726] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:51,727] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:54,847] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:54,848] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:06:57,002] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:06:57,008] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:00,117] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:00,119] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:02,282] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:02,284] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:05,379] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:05,382] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:07,559] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:07,560] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:10,653] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:10,654] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:12,827] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:12,828] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:15,936] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:15,936] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:18,086] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:18,087] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:21,208] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:21,209] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:23,344] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:23,349] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:26,480] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:26,481] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:28,606] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:28,606] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:31,755] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:31,756] error: <class 'RecursionError'>
+__init__.py[LINE:224]#ERROR    [2016-12-20 10:07:33,860] A request to the Telegram API was unsuccessful. The server returned HTTP 409 Conflict. Response body:
+[b'{"ok":false,"error_code":409,"description":"Conflict: terminated by other long poll or webhook"}']
+bot.py[LINE:317]#ERROR    [2016-12-20 10:07:33,862] error: <class 'RecursionError'>
+bot.py[LINE:309]#WARNING  [2016-12-20 10:23:39,162] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/horror
+bot.py[LINE:309]#WARNING  [2016-12-20 10:23:41,596] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/horror
+bot.py[LINE:309]#WARNING  [2016-12-20 10:23:43,569] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/horror
+bot.py[LINE:309]#WARNING  [2016-12-20 10:23:45,706] Возникла проблема с добавлением фильма у юзера - 257905279 При запросе/horror
+bot.py[LINE:318]#ERROR    [2016-12-20 10:24:39,024] error: <class 'TypeError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 10:24:44,029] error: <class 'TypeError'>
+bot.py[LINE:318]#ERROR    [2016-12-20 10:24:49,074] error: <class 'TypeError'>

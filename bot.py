@@ -19,9 +19,7 @@ empty_req = [{'Иван Царевич и Серый Волк 2, 2013,':
 'http://megogo.net/ru/view/1148471-ivan-carevich-i-seryy-volk-2.html'},
 {'Малавита, 2013,': 'http://megogo.net/ru/view/1321981-malavita.html'},
 {'Superнянь (Супернянь), 2014,': 'http://megogo.net/ru/view/1373621-supernyan-supernyan.html'},
-{'Паркер, 2012,': 'http://megogo.net/ru/view/1197381-parker.html'},
-{'Судья Дредд, 2012,': 'http://megogo.net/ru/view/94941-sudya-dredd.html'},
-{'Проповедник с пулеметом, 2011,': 'http://megogo.net/ru/view/1604261-propovednik-s-pulemetom.html'}]
+{'Паркер, 2012,': 'http://megogo.net/ru/view/1197381-parker.html'}]
 logging.basicConfig(format=u'%(filename)s[LINE:%(lineno)d]#%(levelname)-8s [%(asctime)s] %(message)s'
                     ,level=logging.WARNING, filename='mylog.log')
 
@@ -42,7 +40,6 @@ def welcome(message):
 
 @bot.message_handler(commands=['help'])
 def help_bot(message):
-    ptwee_db_orm.add_user(message.chat.id)
     text = '''Можешь со мной общаться посредством команд, обязательно обрати внимание на нижнее подчеркивание после каждой команды.
 Обязательно обрати внимание на команды, в которых обязательно указание года выхода фильма,
 без этого поиск будет работать не всегда верно, так как существуют фильмы с одинаковым названием, но разного года выхода.
@@ -58,6 +55,7 @@ def help_bot(message):
 /print_up_reit_ <REIT> - выведу фильмы из твоей очереди, рейтинг которых выше указанного тобою
 /add_rand_ - предложу тебе выбрать жанр, а потом добавлю тебе в очередь случайный фильм этого жанра
     '''
+    ptwee_db_orm.add_user(message.chat.id)
     bot.send_message(message.chat.id, text)
 
 @bot.message_handler(commands=['find_film_'])
@@ -68,12 +66,7 @@ def find_film(message):
         film = del_dash(film)
         html = Find_and_Parse.get_html(film)
         film_lis = Find_and_Parse.parse_film(html)
-        count = 0
-        for el in empty_req:
-            if el in film_lis :
-                count += 1
-
-        if count == len(empty_req):
+        if film_lis[:4] == empty_req:
             bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
 
         else:
@@ -112,12 +105,7 @@ def about_film(message):
         else:
             html = Find_and_Parse.get_html(film)
             film = Find_and_Parse.parse_film(html)
-            count = 0
-            for el in empty_req:
-                if el in film:
-                    count += 1
-
-            if count == len(empty_req):
+            if film[:4] == empty_req:
                 bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
 
             else:
@@ -139,16 +127,12 @@ def add_film(message):
         film = del_dash(film)
         html = Find_and_Parse.get_html(film)
         film = Find_and_Parse.parse_film(html)
-        count = 0
-        for el in empty_req:
-            if el in film:
-                count += 1
-
-        if count == len(empty_req):
+        if film[:4] == empty_req:
             bot.send_message(message.chat.id, 'Извини, не смог найти такой фильм')
 
         else:
             dict_film = Find_and_Parse.parse_find(str(film[0].values())[14:-3])
+            print(dict_film)
             bool = ptwee_db_orm.return_film(dict_film['name'], dict_film['age'])
             if not bool:
                 ptwee_db_orm.add_film(str(dict_film['name']), ptwee_db_orm.return_id_film(), str(dict_film['age']), str(dict_film['actors']),
@@ -176,6 +160,7 @@ def print_queue(message):
 @bot.message_handler(commands=['print_first_'])
 def print_first(message):
     try:
+        ptwee_db_orm.add_user(message.chat.id)
         ptwee_db_orm.add_user(message.chat.id)
         film_lis = ptwee_db_orm.print_films(message.chat.id)
         bot.send_message(message.chat.id, str(film_lis[0]))
@@ -315,6 +300,7 @@ def add_rand(message):
                                   str(dict_film['actors']),
                                   str(dict_film['reit']), str(dict_film['genre']))
 
+
         ptwee_db_orm.add_film_user(dict_film['name'], dict_film['age'], message.chat.id)
         bot.send_message(message.chat.id, 'Добавил тебе новый фильм - ' + dict_film['name'])
 
@@ -328,7 +314,6 @@ if __name__ == '__main__':
             bot.polling(none_stop=True)
 
         except:
-            bot.set_update_listener(listener)
             logging.error('error: {}'.format(sys.exc_info()[0]))
             time.sleep(5)
 
